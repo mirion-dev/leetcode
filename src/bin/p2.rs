@@ -3,21 +3,26 @@ impl Solution {
         let mut p1 = l1.as_ref();
         let mut p2 = l2.as_ref();
         let mut head = ListNode::new(0);
-        let mut p = &mut head;
+        let mut pr = &mut head;
         let mut carry = 0;
-        // this overhead is acceptable because of the list costs
-        while p1.is_some() || p2.is_some() || carry != 0 {
-            if let Some(node) = p1 {
-                carry += node.val;
-                p1 = node.next.as_ref();
-            }
-            if let Some(node) = p2 {
-                carry += node.val;
-                p2 = node.next.as_ref();
-            }
-
-            p = p.next.insert(Box::new(ListNode::new(carry % 10)));
+        while let (Some(node1), Some(node2)) = (p1, p2) {
+            carry += node1.val + node2.val;
+            pr = pr.next.insert(Box::new(ListNode::new(carry % 10)));
             carry /= 10;
+            p1 = node1.next.as_ref();
+            p2 = node2.next.as_ref();
+        }
+
+        let mut p = p1.or(p2);
+        while let Some(node) = p {
+            carry += node.val;
+            pr = pr.next.insert(Box::new(ListNode::new(carry % 10)));
+            carry /= 10;
+            p = node.next.as_ref();
+        }
+
+        if carry != 0 {
+            pr.next = Some(Box::new(ListNode::new(carry)));
         }
 
         head.next
