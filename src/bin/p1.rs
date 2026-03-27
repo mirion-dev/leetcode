@@ -11,7 +11,7 @@ impl Solution {
                     None
                 })
             })
-            .unwrap()
+            .unwrap_or(vec![])
     }
 }
 
