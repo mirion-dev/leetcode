@@ -2,10 +2,9 @@ impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         let mut l = 0;
         let mut last = [0; 128];
-        s.as_bytes()
-            .iter()
+        s.chars()
             .enumerate()
-            .map(|(r, &ch)| {
+            .map(|(r, ch)| {
                 l = l.max(last[ch as usize]);
                 last[ch as usize] = r + 1;
                 (r - l + 1) as i32
