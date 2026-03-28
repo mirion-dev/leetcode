@@ -5,7 +5,7 @@ impl Solution {
         let mut radius = vec![0; extended.len()];
         let mut rightmost = 0usize;
         (2..extended.len() - 2)
-            .map(|i: usize| {
+            .map(|i| {
                 let right = rightmost + radius[rightmost];
                 let mut r = 0;
                 if i < right {
