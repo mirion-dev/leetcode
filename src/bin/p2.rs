@@ -3,11 +3,11 @@ impl Solution {
         let mut p1 = l1.as_ref();
         let mut p2 = l2.as_ref();
         let mut head = ListNode::new(0);
-        let mut pr = &mut head;
+        let mut tail = &mut head;
         let mut carry = 0;
         while let (Some(node1), Some(node2)) = (p1, p2) {
             carry += node1.val + node2.val;
-            pr = pr.next.insert(Box::new(ListNode::new(carry % 10)));
+            tail = tail.next.insert(Box::new(ListNode::new(carry % 10)));
             carry /= 10;
             p1 = node1.next.as_ref();
             p2 = node2.next.as_ref();
@@ -16,13 +16,13 @@ impl Solution {
         let mut p = p1.or(p2);
         while let Some(node) = p {
             carry += node.val;
-            pr = pr.next.insert(Box::new(ListNode::new(carry % 10)));
+            tail = tail.next.insert(Box::new(ListNode::new(carry % 10)));
             carry /= 10;
             p = node.next.as_ref();
         }
 
         if carry != 0 {
-            pr.next = Some(Box::new(ListNode::new(carry)));
+            tail.next = Some(Box::new(ListNode::new(carry)));
         }
 
         head.next
