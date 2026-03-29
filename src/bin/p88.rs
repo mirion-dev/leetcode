@@ -1,13 +1,15 @@
 impl Solution {
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
-        let mut i = (0..m as usize).rev().peekable();
-        let mut j = (0..n as usize).rev();
-        let mut out = (0..(m + n) as usize).rev();
-        while let Some(j) = j.next() {
-            while let Some(i) = i.next_if(|&i| nums1[i] > nums2[j]) {
-                nums1[out.next().expect("out of range")] = nums1[i];
+        let mut i = m as usize;
+        let mut out = (m + n) as usize;
+        for &val in nums2.iter().rev() {
+            while i != 0 && nums1[i - 1] > val {
+                i -= 1;
+                out -= 1;
+                nums1[out] = nums1[i];
             }
-            nums1[out.next().expect("out of range")] = nums2[j];
+            out -= 1;
+            nums1[out] = val;
         }
     }
 }
