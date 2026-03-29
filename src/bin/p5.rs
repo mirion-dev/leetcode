@@ -22,7 +22,7 @@ impl Solution {
             })
             .max_by_key(|&s| s.len())
             .unwrap_or(&[])
-            .into_iter()
+            .iter()
             .collect()
     }
 }
