@@ -2,12 +2,12 @@ impl Solution {
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         let mut out = 1;
         for i in 1..nums.len() {
-            if nums[i] != nums[i - 1] {
+            if nums[i] != nums[out - 1] {
                 nums[out] = nums[i];
                 out += 1;
             }
         }
-        out as i32
+        out.min(nums.len()) as i32
     }
 }
 
@@ -22,4 +22,7 @@ fn test(mut nums: Vec<i32>, expected: Vec<i32>, ret_expected: i32) {
 fn main() {
     test(vec![1, 1, 2], vec![1, 2], 2);
     test(vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4], vec![0, 1, 2, 3, 4], 5);
+
+    test(vec![], vec![], 0);
+    test(vec![1], vec![1], 1);
 }
