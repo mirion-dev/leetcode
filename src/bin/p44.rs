@@ -5,14 +5,14 @@ impl Solution {
             Loop(char),
         }
 
-        let mut nfa = Vec::with_capacity(p.len());
-        let mut fmt = p.chars().peekable();
-        while let Some(ch) = fmt.next() {
-            nfa.push(match fmt.next_if_eq(&'*') {
-                Some(_) => Node::Loop(ch),
-                None => Node::Next(ch),
+        let nfa: Vec<Node> = p
+            .chars()
+            .map(|ch| match ch {
+                '*' => Node::Loop('.'),
+                '?' => Node::Next('.'),
+                _ => Node::Next(ch),
             })
-        }
+            .collect();
 
         let m = nfa.len() + 1;
         let mut epsilon = vec![m; m];
@@ -52,8 +52,8 @@ struct Solution;
 
 fn main() {
     assert_eq!(Solution::is_match("aa".to_string(), "a".to_string()), false);
-    assert_eq!(Solution::is_match("aa".to_string(), "a*".to_string()), true);
-    assert_eq!(Solution::is_match("ab".to_string(), ".*".to_string()), true);
+    assert_eq!(Solution::is_match("aa".to_string(), "*".to_string()), true);
+    assert_eq!(Solution::is_match("cb".to_string(), "?a".to_string()), false);
 
     assert_eq!(Solution::is_match("".to_string(), "".to_string()), true);
     assert_eq!(Solution::is_match("".to_string(), "a".to_string()), false);
