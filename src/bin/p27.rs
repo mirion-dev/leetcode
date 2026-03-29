@@ -13,12 +13,13 @@ impl Solution {
 
 struct Solution;
 
-fn test(mut nums: Vec<i32>, val: i32, expected: i32) {
-    let k = Solution::remove_element(&mut nums, val);
-    assert_eq!(k, expected);
+fn test(mut nums: Vec<i32>, val: i32, expected: Vec<i32>, ret_expected: i32) {
+    let ret = Solution::remove_element(&mut nums, val);
+    assert_eq!(nums[..ret as usize], expected);
+    assert_eq!(ret, ret_expected);
 }
 
 fn main() {
-    test(vec![3, 2, 2, 3], 3, 2);
-    test(vec![0, 1, 2, 2, 3, 0, 4, 2], 2, 5);
+    test(vec![3, 2, 2, 3], 3, vec![2, 2], 2);
+    test(vec![0, 1, 2, 2, 3, 0, 4, 2], 2, vec![0, 1, 3, 0, 4], 5);
 }
