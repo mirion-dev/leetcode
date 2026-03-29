@@ -5,8 +5,9 @@ impl Solution {
             Loop(char),
         }
 
-        let mut nfa = Vec::with_capacity(p.len());
-        let mut fmt = p.chars().peekable();
+        let fmt: Vec<char> = p.chars().collect();
+        let mut nfa = Vec::with_capacity(fmt.len());
+        let mut fmt = fmt.into_iter().peekable();
         while let Some(ch) = fmt.next() {
             nfa.push(match fmt.next_if_eq(&'*') {
                 Some(_) => Node::Loop(ch),
