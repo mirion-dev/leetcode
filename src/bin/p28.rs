@@ -37,7 +37,8 @@ impl Solution {
 struct Solution;
 
 fn main() {
-    assert_eq!(Solution::str_str("".to_string(), "".to_string()), 0);
     assert_eq!(Solution::str_str("sadbutsad".to_string(), "sad".to_string()), 0);
     assert_eq!(Solution::str_str("leetcode".to_string(), "leeto".to_string()), -1);
+
+    assert_eq!(Solution::str_str("".to_string(), "".to_string()), 0);
 }
