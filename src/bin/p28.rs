@@ -1,0 +1,43 @@
+impl Solution {
+    pub fn str_str(haystack: String, needle: String) -> i32 {
+        if needle.is_empty() {
+            return 0;
+        }
+
+        let p: Vec<char> = needle.chars().collect();
+        let m = p.len();
+        let mut fail = vec![0; m + 1];
+        for i in 1..m {
+            let mut j = fail[i];
+            while j != 0 && p[i] != p[j] {
+                j = fail[j];
+            }
+            if p[i] == p[j] {
+                j += 1;
+            }
+            fail[i + 1] = j;
+        }
+
+        let mut j = 0;
+        for (i, ch) in haystack.chars().enumerate() {
+            while j != 0 && p[j] != ch {
+                j = fail[j];
+            }
+            if p[j] == ch {
+                j += 1;
+            }
+            if j == m {
+                return (i + 1 - m) as i32;
+            }
+        }
+        -1
+    }
+}
+
+struct Solution;
+
+fn main() {
+    assert_eq!(Solution::str_str("".to_string(), "".to_string()), 0);
+    assert_eq!(Solution::str_str("sadbutsad".to_string(), "sad".to_string()), 0);
+    assert_eq!(Solution::str_str("leetcode".to_string(), "leeto".to_string()), -1);
+}
