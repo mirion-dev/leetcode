@@ -31,8 +31,8 @@ impl Solution {
             next.fill(false);
             for i in (0..m - 1).filter(|&i| reach[i]) {
                 match nfa[i] {
-                    Node::Next(fmt_ch) if fmt_ch == '.' || ch == fmt_ch => next[i + 1] = true,
-                    Node::Loop(fmt_ch) if fmt_ch == '.' || ch == fmt_ch => next[i] = true,
+                    Node::Next(p_ch) if p_ch == '.' || ch == p_ch => next[i + 1] = true,
+                    Node::Loop(p_ch) if p_ch == '.' || ch == p_ch => next[i] = true,
                     _ => {}
                 }
             }

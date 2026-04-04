@@ -20,10 +20,10 @@ impl Solution {
 
         let mut j = 0;
         for (i, ch) in haystack.chars().enumerate() {
-            while j != 0 && p[j] != ch {
+            while j != 0 && ch != p[j] {
                 j = fail[j];
             }
-            if p[j] == ch {
+            if ch == p[j] {
                 j += 1;
             }
             if j == m {

@@ -5,11 +5,11 @@ impl Solution {
             Loop(char),
         }
 
-        let fmt: Vec<char> = p.chars().collect();
-        let mut nfa = Vec::with_capacity(fmt.len());
-        let mut fmt = fmt.into_iter().peekable();
-        while let Some(ch) = fmt.next() {
-            nfa.push(match fmt.next_if_eq(&'*') {
+        let p: Vec<char> = p.chars().collect();
+        let mut nfa = Vec::with_capacity(p.len());
+        let mut p = p.into_iter().peekable();
+        while let Some(ch) = p.next() {
+            nfa.push(match p.next_if_eq(&'*') {
                 Some(_) => Node::Loop(ch),
                 None => Node::Next(ch),
             })
@@ -32,8 +32,8 @@ impl Solution {
             next.fill(false);
             for i in (0..m - 1).filter(|&i| reach[i]) {
                 match nfa[i] {
-                    Node::Next(fmt_ch) if fmt_ch == '.' || ch == fmt_ch => next[i + 1] = true,
-                    Node::Loop(fmt_ch) if fmt_ch == '.' || ch == fmt_ch => next[i] = true,
+                    Node::Next(p_ch) if p_ch == '.' || ch == p_ch => next[i + 1] = true,
+                    Node::Loop(p_ch) if p_ch == '.' || ch == p_ch => next[i] = true,
                     _ => {}
                 }
             }
