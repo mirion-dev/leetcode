@@ -1,6 +1,5 @@
 impl Solution {
-    pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
-        let mut digits = digits;
+    pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
         for d in digits.iter_mut().rev() {
             *d += 1;
             if *d < 10 {

@@ -1,6 +1,5 @@
 impl Solution {
-    pub fn reverse(x: i32) -> i32 {
-        let mut x = x;
+    pub fn reverse(mut x: i32) -> i32 {
         let mut res = 0i32;
         while x != 0 {
             match res.checked_mul(10).and_then(|v| v.checked_add(x % 10)) {

@@ -1,5 +1,5 @@
 impl Solution {
-    pub fn is_palindrome(x: i32) -> bool {
+    pub fn is_palindrome(mut x: i32) -> bool {
         if x == 0 {
             return true;
         }
@@ -7,7 +7,6 @@ impl Solution {
             return false;
         }
 
-        let mut x = x;
         let mut y = 0;
         while x > y {
             y = y * 10 + x % 10;

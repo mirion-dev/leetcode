@@ -1,6 +1,5 @@
 impl Solution {
-    pub fn int_to_roman(num: i32) -> String {
-        let mut num = num;
+    pub fn int_to_roman(mut num: i32) -> String {
         [
             (1000, "M"),
             (900, "CM"),
