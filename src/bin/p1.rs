@@ -1,13 +1,22 @@
-use std::collections::HashMap;
+use std::cmp::Ordering;
 
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        let mut map = HashMap::with_capacity(nums.len());
-        for (i, &v) in nums.iter().enumerate() {
-            if let Some(&j) = map.get(&(target - v)) {
-                return vec![j as i32, i as i32];
+        if nums.is_empty() {
+            return vec![];
+        }
+
+        let mut nums: Vec<(usize, i32)> = nums.into_iter().enumerate().collect();
+        nums.sort_unstable_by_key(|&(_, v)| v);
+
+        let mut i = 0;
+        let mut j = nums.len() - 1;
+        while i < j {
+            match (nums[i].1 + nums[j].1).cmp(&target) {
+                Ordering::Equal => return vec![nums[i].0 as i32, nums[j].0 as i32],
+                Ordering::Less => i += 1,
+                Ordering::Greater => j -= 1,
             }
-            map.insert(v, i);
         }
         vec![]
     }
