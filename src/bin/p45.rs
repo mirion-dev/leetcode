@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn jump(nums: Vec<i32>) -> i32 {
         if nums.is_empty() {
             return 0;

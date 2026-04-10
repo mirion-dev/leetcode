@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn majority_element(nums: Vec<i32>) -> i32 {
         let mut count = 0;
         nums.iter().fold(0, |x, &v| {

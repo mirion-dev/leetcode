@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n m)
+    // space : O(m)
     pub fn is_match(s: String, p: String) -> bool {
         enum Node {
             Next(char),

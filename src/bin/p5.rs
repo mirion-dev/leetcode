@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(n)
     pub fn longest_palindrome(s: String) -> String {
         let s: Vec<char> = s.chars().collect();
         let extended: Vec<char> = ['^'].into_iter().chain(s.iter().flat_map(|&c| ['.', c])).chain(['.', '$']).collect();

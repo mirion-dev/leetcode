@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         let mut out = 2;
         for i in 2..nums.len() {

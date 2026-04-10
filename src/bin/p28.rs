@@ -1,10 +1,12 @@
 impl Solution {
-    pub fn str_str(haystack: String, needle: String) -> i32 {
-        if needle.is_empty() {
+    // time  : O(n + m)
+    // space : O(m)
+    pub fn str_str(s: String, p: String) -> i32 {
+        if p.is_empty() {
             return 0;
         }
 
-        let p: Vec<char> = needle.chars().collect();
+        let p: Vec<char> = p.chars().collect();
         let m = p.len();
         let mut fail = vec![0; m + 1];
         for i in 1..m {
@@ -19,7 +21,7 @@ impl Solution {
         }
 
         let mut j = 0;
-        for (i, ch) in haystack.chars().enumerate() {
+        for (i, ch) in s.chars().enumerate() {
             while j != 0 && ch != p[j] {
                 j = fail[j];
             }

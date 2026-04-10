@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
         let mut res = vec![0; nums.len()];
         let mut prod = 1;

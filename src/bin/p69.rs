@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(log log n)
+    // space : O(1)
     pub fn my_sqrt(n: i32) -> i32 {
         if n <= 1 {
             return n;

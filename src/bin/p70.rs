@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(log n)
+    // space : O(1)
     pub fn climb_stairs(n: i32) -> i32 {
         (0..32 - n.leading_zeros())
             .rev()

@@ -1,6 +1,8 @@
 use std::cmp::Ordering;
 
 impl Solution {
+    // time  : O(n log n)
+    // space : O(n)
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         if nums.is_empty() {
             return vec![];

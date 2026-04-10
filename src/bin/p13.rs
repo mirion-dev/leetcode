@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn roman_to_int(s: String) -> i32 {
         s.chars()
             .rev()

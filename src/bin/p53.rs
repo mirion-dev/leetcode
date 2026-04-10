@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn max_sub_array(nums: Vec<i32>) -> i32 {
         let mut last = 0;
         nums.iter()

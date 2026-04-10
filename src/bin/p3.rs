@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n)
+    // space : O(1)
     pub fn length_of_longest_substring(s: String) -> i32 {
         let mut l = 0;
         let mut last = [0; 128];

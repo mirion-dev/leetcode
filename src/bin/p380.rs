@@ -5,6 +5,8 @@ struct RandomizedSet {
     indices: HashMap<i32, usize>,
 }
 
+// time  : average O(1)
+// space : O(n)
 impl RandomizedSet {
     fn new() -> Self {
         Self { values: vec![], indices: HashMap::new() }

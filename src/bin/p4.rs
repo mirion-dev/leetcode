@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(log min(n, m))
+    // space : O(1)
     pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
         let m = nums1.len();
         let n = nums2.len();

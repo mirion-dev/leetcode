@@ -1,4 +1,6 @@
 impl Solution {
+    // time  : O(n min_i m_i)
+    // space : O(min_i m_i)
     pub fn longest_common_prefix(strs: Vec<String>) -> String {
         strs.first().map_or(String::new(), |first| {
             first
