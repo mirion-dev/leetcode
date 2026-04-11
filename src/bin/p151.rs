@@ -1,6 +1,6 @@
+// time  : O(n)
+// space : O(n)
 impl Solution {
-    // time  : O(n)
-    // space : O(n)
     pub fn reverse_words(s: String) -> String {
         s.split_whitespace().rev().collect::<Vec<&str>>().join(" ")
     }

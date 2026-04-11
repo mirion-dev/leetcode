@@ -1,6 +1,6 @@
+// time  : O(n)
+// space : O(n)
 impl Solution {
-    // time  : O(n)
-    // space : O(n)
     pub fn convert(s: String, num_rows: i32) -> String {
         let n = num_rows as usize;
         if n == 1 {

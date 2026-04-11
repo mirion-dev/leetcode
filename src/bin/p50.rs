@@ -1,6 +1,6 @@
+// time  : O(log n)
+// space : O(1)
 impl Solution {
-    // time  : O(log n)
-    // space : O(1)
     pub fn my_pow(mut x: f64, mut n: i32) -> f64 {
         let neg = n < 0;
         let mut res = 1.;

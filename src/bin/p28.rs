@@ -1,6 +1,6 @@
+// time  : O(n + m)
+// space : O(m)
 impl Solution {
-    // time  : O(n + m)
-    // space : O(m)
     pub fn str_str(s: String, p: String) -> i32 {
         if p.is_empty() {
             return 0;

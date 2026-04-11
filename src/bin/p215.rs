@@ -1,8 +1,8 @@
 use std::cmp::Ordering;
 
+// time  : O(n)
+// space : O(log n)
 impl Solution {
-    // time  : O(n)
-    // space : O(log n)
     fn medians_of_medians<T: Ord>(nums: &mut [T], nth: usize) -> (&mut [T], &mut [T], &mut [T]) {
         const CHUNK_LEN: usize = 5;
         let n = nums.len();

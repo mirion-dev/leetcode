@@ -1,6 +1,6 @@
+// time  : O(log n)
+// space : O(1)
 impl Solution {
-    // time  : O(log n)
-    // space : O(1)
     pub fn reverse(mut x: i32) -> i32 {
         let mut res = 0i32;
         while x != 0 {

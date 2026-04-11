@@ -1,6 +1,6 @@
+// time  : O(n)
+// space : O(1)
 impl Solution {
-    // time  : O(n)
-    // space : O(1)
     pub fn my_atoi(s: String) -> i32 {
         let mut s = s.trim_start().chars().peekable();
         let sign = match s.next_if(|&ch| ch == '+' || ch == '-') {

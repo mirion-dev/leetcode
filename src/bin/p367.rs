@@ -1,6 +1,6 @@
+// time  : O(log log n)
+// space : O(1)
 impl Solution {
-    // time  : O(log log n)
-    // space : O(1)
     pub fn is_perfect_square(n: i32) -> bool {
         if n <= 1 {
             return true;

@@ -1,6 +1,6 @@
+// time  : O(n)
+// space : O(1)
 impl Solution {
-    // time  : O(n)
-    // space : O(1)
     pub fn can_jump(nums: Vec<i32>) -> bool {
         let mut farthest = 0;
         for (i, &v) in nums.iter().enumerate() {

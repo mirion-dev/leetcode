@@ -1,6 +1,6 @@
+// time  : O(n)
+// space : O(1)
 impl Solution {
-    // time  : O(n)
-    // space : O(1)
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         if nums.is_empty() {
             return;

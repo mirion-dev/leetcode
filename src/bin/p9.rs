@@ -1,6 +1,6 @@
+// time  : O(log n)
+// space : O(1)
 impl Solution {
-    // time  : O(log n)
-    // space : O(1)
     pub fn is_palindrome(mut x: i32) -> bool {
         if x == 0 {
             return true;

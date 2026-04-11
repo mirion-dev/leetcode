@@ -1,6 +1,6 @@
+// time  : O(n)
+// space : O(1)
 impl Solution {
-    // time  : O(n)
-    // space : O(1)
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         let mut min = i32::MAX;
         prices
