@@ -34,16 +34,10 @@ impl Solution {
 
 struct Solution;
 
-fn assert_eq(mut actual: Vec<Vec<i32>>, mut expected: Vec<Vec<i32>>) {
-    actual.sort();
-    expected.sort();
-    assert_eq!(actual, expected);
-}
-
 fn main() {
-    assert_eq(Solution::three_sum(vec![-1, 0, 1, 2, -1, -4]), vec![vec![-1, -1, 2], vec![-1, 0, 1]]);
-    assert_eq(Solution::three_sum(vec![0, 1, 1]), vec![] as Vec<Vec<i32>>);
-    assert_eq(Solution::three_sum(vec![0, 0, 0]), vec![vec![0, 0, 0]]);
+    assert_eq!(Solution::three_sum(vec![-1, 0, 1, 2, -1, -4]), vec![vec![-1, -1, 2], vec![-1, 0, 1]]);
+    assert_eq!(Solution::three_sum(vec![0, 1, 1]), vec![] as Vec<Vec<i32>>);
+    assert_eq!(Solution::three_sum(vec![0, 0, 0]), vec![vec![0, 0, 0]]);
 
-    assert_eq(Solution::three_sum(vec![0, 0, 0, 0]), vec![vec![0, 0, 0]]);
+    assert_eq!(Solution::three_sum(vec![0, 0, 0, 0]), vec![vec![0, 0, 0]]);
 }
