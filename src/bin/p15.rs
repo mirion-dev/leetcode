@@ -3,15 +3,16 @@
 impl Solution {
     pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         nums.sort_unstable();
+        let n = nums.len();
         let mut res = vec![];
         let mut i = 0;
-        while i < nums.len() {
+        while i < n {
             if nums[i] > 0 {
                 break;
             }
 
             let mut j = i + 1;
-            let mut k = nums.len() - 1;
+            let mut k = n - 1;
             while j < k {
                 match (nums[i] + nums[j] + nums[k]).signum() {
                     -1 => j += 1,
@@ -25,7 +26,7 @@ impl Solution {
                     }
                 }
             }
-            i = nums[i + 1..].iter().position(|&v| v > nums[i]).map_or(nums.len(), |offset| i + 1 + offset);
+            i = nums[i + 1..].iter().position(|&v| v > nums[i]).map_or(n, |offset| i + 1 + offset);
         }
         res
     }
