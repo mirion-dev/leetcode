@@ -2,7 +2,7 @@
 // space : O(min_i m_i)
 impl Solution {
     pub fn longest_common_prefix(strs: Vec<String>) -> String {
-        strs.first().map_or(String::new(), |first| {
+        strs.first().map_or("".to_string(), |first| {
             first
                 .char_indices()
                 .find(|&(i, ch)| strs.iter().any(|s| s.get(i..).map_or(true, |s| !s.starts_with(ch))))

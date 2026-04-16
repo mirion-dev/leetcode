@@ -7,8 +7,9 @@ impl Solution {
         s.chars()
             .enumerate()
             .map(|(r, ch)| {
-                l = l.max(last[ch as usize]);
-                last[ch as usize] = r + 1;
+                let ch = ch as usize;
+                l = l.max(last[ch]);
+                last[ch] = r + 1;
                 (r - l + 1) as i32
             })
             .max()

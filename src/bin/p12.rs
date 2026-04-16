@@ -18,7 +18,7 @@ impl Solution {
             (1, "I"),
         ]
         .into_iter()
-        .fold(String::new(), |mut res, (val, sym)| {
+        .fold("".to_string(), |mut res, (val, sym)| {
             while num >= val {
                 res.push_str(sym);
                 num -= val;
