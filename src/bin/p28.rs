@@ -6,7 +6,7 @@ impl Solution {
             return 0;
         }
 
-        let p: Vec<char> = p.chars().collect();
+        let p = p.as_bytes();
         let m = p.len();
         let mut fail = vec![0; m + 1];
         for i in 1..m {
@@ -21,7 +21,7 @@ impl Solution {
         }
 
         let mut j = 0;
-        for (i, ch) in s.chars().enumerate() {
+        for (i, &ch) in s.as_bytes().iter().enumerate() {
             while j != 0 && ch != p[j] {
                 j = fail[j];
             }

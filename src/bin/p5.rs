@@ -2,8 +2,7 @@
 // space : O(n)
 impl Solution {
     pub fn longest_palindrome(s: String) -> String {
-        let s: Vec<char> = s.chars().collect();
-        let extended: Vec<char> = ['^'].into_iter().chain(s.iter().flat_map(|&c| ['.', c])).chain(['.', '$']).collect();
+        let extended: Vec<char> = ['^'].into_iter().chain(s.chars().flat_map(|c| ['.', c])).chain(['.', '$']).collect();
         let mut radius = vec![0; extended.len()];
         let mut rightmost = 0usize;
         (2..extended.len() - 2)
@@ -23,9 +22,8 @@ impl Solution {
                 &s[(i - r - 1) / 2..(i + r - 1) / 2]
             })
             .max_by_key(|&s| s.len())
-            .unwrap_or(&[])
-            .iter()
-            .collect()
+            .unwrap_or("")
+            .to_string()
     }
 }
 

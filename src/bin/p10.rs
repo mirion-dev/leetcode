@@ -7,10 +7,9 @@ impl Solution {
             Loop(char),
         }
 
-        let p: Vec<char> = p.chars().collect();
         let mut nfa = Vec::with_capacity(p.len());
-        let mut p = p.iter().peekable();
-        while let Some(&ch) = p.next() {
+        let mut p = p.chars().peekable();
+        while let Some(ch) = p.next() {
             nfa.push(match p.next_if_eq(&&'*') {
                 Some(_) => Node::Loop(ch),
                 None => Node::Next(ch),
