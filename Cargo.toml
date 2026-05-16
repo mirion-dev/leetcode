@@ -3,15 +3,7 @@ name = "leetcode"
 version = "0.1.0"
 edition = "2024"
 
-[workspace]
-members = ["crates/quests/*"]
-
-[workspace.dependencies]
+[dependencies]
 itertools = "0.14.0"
 rand = "=0.8.5"
 regex = "1.12.3"
-
-[dependencies]
-itertools.workspace = true
-rand.workspace = true
-regex.workspace = true

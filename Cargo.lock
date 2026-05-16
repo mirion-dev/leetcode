@@ -12,15 +12,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "array1"
-version = "0.1.0"
-dependencies = [
- "itertools",
- "rand",
- "regex",
-]
-
-[[package]]
 name = "cfg-if"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
