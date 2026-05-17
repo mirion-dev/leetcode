@@ -1,5 +1,5 @@
 // time  : O(n)
-// space : O(1)
+// space : O(n)
 impl Solution {
     pub fn smaller_numbers_than_current(nums: Vec<i32>) -> Vec<i32> {
         let mut count = [0; 101];
