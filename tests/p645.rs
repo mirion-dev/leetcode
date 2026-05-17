@@ -14,10 +14,8 @@ impl Solution {
             }
         }
 
-        nums.iter()
-            .enumerate()
-            .find(|&(_, &v)| v & APPEARED == 0)
-            .map_or(vec![], |(i, _)| vec![twice as i32 + 1, i as i32 + 1])
+        let missing = nums.iter().enumerate().find(|&(_, &v)| v & APPEARED == 0).map_or(usize::MAX, |(i, _)| i);
+        vec![twice as i32 + 1, missing as i32 + 1]
     }
 }
 
