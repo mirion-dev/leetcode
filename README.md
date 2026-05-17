@@ -17,7 +17,11 @@ My LeetCode solutions for studying Rust. They usually have the optimum complexit
     - [Build an Array With Stack Operations](tests/p1441.rs)
     - [Evaluate Reverse Polish Notation](tests/p150.rs)
     - [Exclusive Time of Functions](tests/p636.rs)
-  - _Monotonic Stack_
+  - Monotonic Stack
+    - [Final Prices With a Special Discount in a Shop](tests/p1475.rs)
+    - [Daily Temperatures](tests/p739.rs)
+    - [Largest Rectangle in Histogram](tests/p84.rs)
+  - Monotonic Stack II (Premium only)
 
 ### Plans
 

@@ -11,7 +11,8 @@ My LeetCode solutions for studying Rust. They usually have the optimum complexit
     - Array I #problem-list(1929, 1470, 485)
     - Array II #problem-list(645, 1365, 448)
     - Stack #problem-list(1441, 150, 636)
-    - _Monotonic Stack_
+    - Monotonic Stack #problem-list(1475, 739, 84)
+    - #strike[Monotonic Stack II] (Premium only)
 
 == Plans
 
