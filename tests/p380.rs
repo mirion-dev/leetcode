@@ -13,22 +13,24 @@ impl RandomizedSet {
     }
 
     fn insert(&mut self, value: i32) -> bool {
-        if let Entry::Vacant(entry) = self.indices.entry(value) {
-            entry.insert(self.values.len());
-            self.values.push(value);
-            true
-        } else {
-            false
+        match self.indices.entry(value) {
+            Entry::Vacant(entry) => {
+                entry.insert(self.values.len());
+                self.values.push(value);
+                true
+            }
+            Entry::Occupied(_) => false,
         }
     }
 
     fn remove(&mut self, value: i32) -> bool {
-        if let Some(index) = self.indices.remove(&value) {
-            self.values.swap_remove(index);
-            self.values.get(index).map(|&value| self.indices.insert(value, index));
-            true
-        } else {
-            false
+        match self.indices.remove(&value) {
+            Some(index) => {
+                self.values.swap_remove(index);
+                self.values.get(index).map(|&value| self.indices.insert(value, index));
+                true
+            }
+            None => false,
         }
     }
 
