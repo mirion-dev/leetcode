@@ -2,6 +2,7 @@
 // space : O(m)
 impl Solution {
     pub fn is_match(s: String, p: String) -> bool {
+        #[derive(Debug)]
         enum Node {
             Next(char),
             Loop(char),
