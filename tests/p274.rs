@@ -4,7 +4,7 @@ impl Solution {
     pub fn h_index(citations: Vec<i32>) -> i32 {
         let n = citations.len();
         let mut count = vec![0; n + 1];
-        for c in citations {
+        for &c in citations.iter() {
             count[(c as usize).min(n)] += 1;
         }
 

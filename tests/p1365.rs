@@ -3,7 +3,7 @@
 impl Solution {
     pub fn smaller_numbers_than_current(nums: Vec<i32>) -> Vec<i32> {
         let mut count = [0; 101];
-        for i in nums.iter().copied() {
+        for &i in nums.iter() {
             count[i as usize] += 1
         }
 
