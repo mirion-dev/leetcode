@@ -5,23 +5,29 @@ My LeetCode solutions for studying Rust. They usually have the optimum complexit
 ### Quests
 
 - Data Structures and Algorithms
-  - Array I
-    - [Concatenation of Array](tests/p1929.rs)
-    - [Shuffle the Array](tests/p1470.rs)
-    - [Max Consecutive Ones](tests/p485.rs)
-  - Array II
-    - [Set Mismatch](tests/p645.rs)
-    - [How Many Numbers Are Smaller Than the Current Number](tests/p1365.rs)
-    - [Find All Numbers Disappeared in an Array](tests/p448.rs)
-  - Stack
-    - [Build an Array With Stack Operations](tests/p1441.rs)
-    - [Evaluate Reverse Polish Notation](tests/p150.rs)
-    - [Exclusive Time of Functions](tests/p636.rs)
-  - Monotonic Stack
-    - [Final Prices With a Special Discount in a Shop](tests/p1475.rs)
-    - [Daily Temperatures](tests/p739.rs)
-    - [Largest Rectangle in Histogram](tests/p84.rs)
-  - Monotonic Stack II (Premium only)
+  - Linear Shoal
+    - Array I
+      - [Concatenation of Array](tests/p1929.rs)
+      - [Shuffle the Array](tests/p1470.rs)
+      - [Max Consecutive Ones](tests/p485.rs)
+    - Array II
+      - [Set Mismatch](tests/p645.rs)
+      - [How Many Numbers Are Smaller Than the Current Number](tests/p1365.rs)
+      - [Find All Numbers Disappeared in an Array](tests/p448.rs)
+    - Stack
+      - [Build an Array With Stack Operations](tests/p1441.rs)
+      - [Evaluate Reverse Polish Notation](tests/p150.rs)
+      - [Exclusive Time of Functions](tests/p636.rs)
+    - Monotonic Stack
+      - [Final Prices With a Special Discount in a Shop](tests/p1475.rs)
+      - [Daily Temperatures](tests/p739.rs)
+      - [Largest Rectangle in Histogram](tests/p84.rs)
+    - Monotonic Stack II (Premium only)
+    - Assignment I
+      - [Plus One](tests/p66.rs)
+      - [Valid Mountain Array](tests/p941.rs)
+    - Assignment II
+      - [Remove Duplicate Letters](tests/p316.rs)
 
 ### Plans
 
